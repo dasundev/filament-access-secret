@@ -1,0 +1,35 @@
+{
+    "name": "dasundev/filament-admin-access-secret",
+    "description": "A package for secure your Filament admin login.",
+    "keywords": [
+        "dasundev",
+        "laravel",
+        "filament",
+        "secret",
+        "login"
+    ],
+    "require": {
+        "php": "^8.0",
+        "filament/filament": "^2.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Dasundev\\FilamentAdminAccessSecret\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Dasun Tharanga",
+            "email": "hello@dasun.dev"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Dasundev\\FilamentAdminAccessSecret\\FilamentAdminAccessSecretServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev"
+}
