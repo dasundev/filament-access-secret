@@ -5,7 +5,6 @@ namespace Dasundev\FilamentAdminAccessSecret\Middleware;
 use Closure;
 use Dasundev\FilamentAdminAccessSecret\AdminAccessSecretCookie;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Cache;
 
 class VerifyAdminAccessSecret
 {

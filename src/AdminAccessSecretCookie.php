@@ -9,9 +9,6 @@ class AdminAccessSecretCookie
 {
     /**
      * Create a new admin access secret cookie.
-     *
-     * @param  string  $key
-     * @return Cookie
      */
     public static function create(string $key): Cookie
     {
@@ -25,10 +22,6 @@ class AdminAccessSecretCookie
 
     /**
      * Determine if the given admin access secret is valid.
-     *
-     * @param  string  $cookie
-     * @param  string  $key
-     * @return bool
      */
     public static function isValid(string $cookie, string $key): bool
     {

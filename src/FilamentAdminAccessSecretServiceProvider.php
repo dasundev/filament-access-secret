@@ -5,10 +5,8 @@ namespace Dasundev\FilamentAdminAccessSecret;
 use Dasundev\FilamentAdminAccessSecret\Controllers\StoreSecret;
 use Dasundev\FilamentAdminAccessSecret\Middleware\VerifyAdminAccessSecret;
 use Filament\PluginServiceProvider;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Session;
 use Spatie\LaravelPackageTools\Package;
 
 class FilamentAdminAccessSecretServiceProvider extends PluginServiceProvider

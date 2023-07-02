@@ -5,9 +5,6 @@ namespace Dasundev\FilamentAdminAccessSecret\Controllers;
 use App\Http\Controllers\Controller;
 use Dasundev\FilamentAdminAccessSecret\AdminAccessSecretCookie;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Session;
 
 class StoreSecret extends Controller
 {
