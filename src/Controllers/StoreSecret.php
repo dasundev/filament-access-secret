@@ -5,16 +5,16 @@ namespace Dasundev\FilamentAdminAccessSecret\Controllers;
 use App\Http\Controllers\Controller;
 use Dasundev\FilamentAdminAccessSecret\AdminAccessSecretCookie;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class StoreSecret extends Controller
 {
     public function __invoke(): RedirectResponse
     {
-        $secret = Hash::make(config('filament-admin-access-secret.secret'));
+        $secret = config('filament-admin-access-secret.key');
 
-        return redirect()
-            ->route('filament.auth.login')
-            ->withCookie(AdminAccessSecretCookie::create($secret));
+        return to_route('filament.auth.login')->withCookie(AdminAccessSecretCookie::create($secret));
     }
 }

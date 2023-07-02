@@ -5,8 +5,10 @@ namespace Dasundev\FilamentAdminAccessSecret;
 use Dasundev\FilamentAdminAccessSecret\Controllers\StoreSecret;
 use Dasundev\FilamentAdminAccessSecret\Middleware\VerifyAdminAccessSecret;
 use Filament\PluginServiceProvider;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 use Spatie\LaravelPackageTools\Package;
 
 class FilamentAdminAccessSecretServiceProvider extends PluginServiceProvider
@@ -26,14 +28,14 @@ class FilamentAdminAccessSecretServiceProvider extends PluginServiceProvider
 
     private function registerMiddleware(): void
     {
-        Config::push('filament.middleware.base', VerifyAdminAccessSecret::class);
+        Config::prepend('filament.middleware.base', VerifyAdminAccessSecret::class);
     }
 
     private function registerRoute(): void
     {
         $path = config('filament.path');
-        $secret = config('filament-admin-access-secret.secret');
+        $secret = config('filament-admin-access-secret.key');
 
-        Route::get("$path/$secret", StoreSecret::class)->name('admin.store-secret')->withoutMiddleware(VerifyAdminAccessSecret::class);
+        Route::get("$path/$secret", StoreSecret::class);
     }
 }

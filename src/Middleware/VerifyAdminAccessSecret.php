@@ -4,17 +4,18 @@ namespace Dasundev\FilamentAdminAccessSecret\Middleware;
 
 use Closure;
 use Dasundev\FilamentAdminAccessSecret\AdminAccessSecretCookie;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
+
 class VerifyAdminAccessSecret
 {
-    public function handle($request, Closure $next)
+    public function handle(Request $request, Closure $next)
     {
-        $secret = config('filament-admin-access-secret.secret');
+        $secret = config('filament-admin-access-secret.key');
 
         $cookie = $request->cookie('filament_admin_access_secret');
 
-        dd($request->routeIs(route('admin.store-secret')));
-
-        if ($cookie) {
+        if ($cookie && AdminAccessSecretCookie::isValid($cookie, $secret)) {
             return $next($request);
         }
 
