@@ -29,6 +29,6 @@ If you make changes that involve functionality or add new features, it's importa
 
 ## License
 
-By contributing to this repository, you agree that your contributions will be licensed under the [LICENSE.md](LICENSE) of this package.
+By contributing to this repository, you agree that your contributions will be licensed under the [LICENSE](LICENSE.md) of this package.
 
 If you have any questions or need further assistance, please feel free to reach out by opening an issue on the repository. Thank you for your contributions!
