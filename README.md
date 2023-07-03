@@ -32,3 +32,6 @@ Now, your Filament access is secured with the provided secret key. 🔒
 
 > If you want to disable the secret access, simply keep the FILAMENT_ACCESS_SECRET_KEY value empty or delete the key from the .env file.
 
+## Changelog
+
+Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
