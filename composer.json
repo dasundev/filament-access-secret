@@ -27,7 +27,7 @@
     "extra": {
         "laravel": {
             "providers": [
-              "Dasundev\\\\FilamentAccessSecret\\\\FilamentAccessSecretServiceProvider"
+              "Dasundev\\FilamentAccessSecret\\FilamentAccessSecretServiceProvider"
             ]
         }
     },
