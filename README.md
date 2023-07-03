@@ -1,3 +1,5 @@
+![filament-access-secret](https://github.com/dasundev/filament-access-secret/assets/54996800/3f1e5222-48e8-41c7-bbbd-aea4697aaa94)
+
 # Filament Access Secret
 
 This package provides a middleware for securing access to Filament by requiring a secret key to be provided in the URL.
