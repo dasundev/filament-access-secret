@@ -1,4 +1,5 @@
-![filament-access-secret](https://github.com/dasundev/filament-access-secret/assets/54996800/3f1e5222-48e8-41c7-bbbd-aea4697aaa94)
+
+![filament-access-secret](https://github.com/dasundev/filament-access-secret/assets/54996800/7730e1f6-d792-4b3e-ac87-ff5b9c8825f4)
 
 # Filament Access Secret
 
