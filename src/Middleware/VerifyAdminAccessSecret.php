@@ -14,7 +14,7 @@ class VerifyAdminAccessSecret
 
         $cookie = $request->cookie('filament_admin_access_secret');
 
-        if ($cookie && AdminAccessSecretCookie::isValid($cookie, $secret)) {
+        if ($cookie && AdminAccessSecretCookie::isValid($cookie, $secret) || blank($secret)) {
             return $next($request);
         }
 
