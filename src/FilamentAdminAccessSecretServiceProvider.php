@@ -14,7 +14,7 @@ class FilamentAdminAccessSecretServiceProvider extends PluginServiceProvider
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('filament-admin-access-secret')
+            ->name('filament-access-secret')
             ->hasConfigFile();
     }
 
@@ -32,7 +32,7 @@ class FilamentAdminAccessSecretServiceProvider extends PluginServiceProvider
     private function registerRoute(): void
     {
         $path = config('filament.path');
-        $secret = config('filament-admin-access-secret.key');
+        $secret = config('filament-access-secret.key');
 
         Route::get("$path/$secret", StoreSecret::class);
     }

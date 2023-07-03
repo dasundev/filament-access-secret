@@ -1,5 +1,5 @@
 {
-    "name": "dasundev/filament-admin-access-secret",
+    "name": "dasundev/filament-access-secret",
     "description": "This package provides a middleware for securing access to Filament by requiring a secret key to be provided in the URL.",
     "keywords": [
         "dasundev",

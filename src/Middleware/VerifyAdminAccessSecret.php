@@ -10,7 +10,7 @@ class VerifyAdminAccessSecret
 {
     public function handle(Request $request, Closure $next)
     {
-        $secret = config('filament-admin-access-secret.key');
+        $secret = config('filament-access-secret.key');
 
         $cookie = $request->cookie('filament_admin_access_secret');
 

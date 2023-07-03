@@ -10,7 +10,7 @@ class StoreSecret extends Controller
 {
     public function __invoke(): RedirectResponse
     {
-        $secret = config('filament-admin-access-secret.key');
+        $secret = config('filament-access-secret.key');
 
         return to_route('filament.auth.login')->withCookie(AdminAccessSecretCookie::create($secret));
     }
