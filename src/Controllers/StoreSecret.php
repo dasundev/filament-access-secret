@@ -3,7 +3,7 @@
 namespace Dasundev\FilamentAdminAccessSecret\Controllers;
 
 use App\Http\Controllers\Controller;
-use Dasundev\FilamentAdminAccessSecret\AdminAccessSecretCookie;
+use Dasundev\FilamentAdminAccessSecret\FilamentAccessSecretCookie;
 use Illuminate\Http\RedirectResponse;
 
 class StoreSecret extends Controller
@@ -12,6 +12,6 @@ class StoreSecret extends Controller
     {
         $secret = config('filament-access-secret.key');
 
-        return to_route('filament.auth.login')->withCookie(AdminAccessSecretCookie::create($secret));
+        return to_route('filament.auth.login')->withCookie(FilamentAccessSecretCookie::create($secret));
     }
 }

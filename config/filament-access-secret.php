@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'key' => env('FILAMENT_ADMIN_ACCESS_SECRET_KEY', ''),
+    'key' => env('FILAMENT_ACCESS_SECRET_KEY', ''),
 ];

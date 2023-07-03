@@ -5,7 +5,7 @@ namespace Dasundev\FilamentAdminAccessSecret;
 use Illuminate\Support\Carbon;
 use Symfony\Component\HttpFoundation\Cookie;
 
-class AdminAccessSecretCookie
+class FilamentAccessSecretCookie
 {
     /**
      * Create a new admin access secret cookie.
@@ -14,7 +14,7 @@ class AdminAccessSecretCookie
     {
         $expiresAt = Carbon::now()->addHours(12);
 
-        return new Cookie('filament_admin_access_secret', base64_encode(json_encode([
+        return new Cookie('filament_access_secret', base64_encode(json_encode([
             'expires_at' => $expiresAt->getTimestamp(),
             'mac' => hash_hmac('sha256', $expiresAt->getTimestamp(), $key),
         ])), $expiresAt, config('session.path'), config('session.domain'));
