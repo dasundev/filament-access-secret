@@ -1,9 +1,9 @@
 <?php
 
-namespace Dasundev\FilamentAdminAccessSecret\Controllers;
+namespace Dasundev\FilamentAccessSecret\Controllers;
 
 use App\Http\Controllers\Controller;
-use Dasundev\FilamentAdminAccessSecret\FilamentAccessSecretCookie;
+use Dasundev\FilamentAccessSecret\FilamentAccessSecretCookie;
 use Illuminate\Http\RedirectResponse;
 
 class StoreSecret extends Controller

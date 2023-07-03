@@ -1,9 +1,9 @@
 <?php
 
-namespace Dasundev\FilamentAdminAccessSecret;
+namespace Dasundev\FilamentAccessSecret;
 
-use Dasundev\FilamentAdminAccessSecret\Controllers\StoreSecret;
-use Dasundev\FilamentAdminAccessSecret\Middleware\VerifyAdminAccessSecret;
+use Dasundev\FilamentAccessSecret\Controllers\StoreSecret;
+use Dasundev\FilamentAccessSecret\Middleware\VerifyAdminAccessSecret;
 use Filament\PluginServiceProvider;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Route;

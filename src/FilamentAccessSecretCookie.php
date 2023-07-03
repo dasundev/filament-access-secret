@@ -1,6 +1,6 @@
 <?php
 
-namespace Dasundev\FilamentAdminAccessSecret;
+namespace Dasundev\FilamentAccessSecret;
 
 use Illuminate\Support\Carbon;
 use Symfony\Component\HttpFoundation\Cookie;

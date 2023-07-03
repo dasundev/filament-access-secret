@@ -1,9 +1,9 @@
 <?php
 
-namespace Dasundev\FilamentAdminAccessSecret\Middleware;
+namespace Dasundev\FilamentAccessSecret\Middleware;
 
 use Closure;
-use Dasundev\FilamentAdminAccessSecret\FilamentAccessSecretCookie;
+use Dasundev\FilamentAccessSecret\FilamentAccessSecretCookie;
 use Illuminate\Http\Request;
 
 class VerifyAdminAccessSecret
