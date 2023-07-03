@@ -15,7 +15,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Dasundev\\FilamentAdminAccessSecret\\": "src/"
+            "Dasundev\\FilamentAccessSecret\\": "src/"
         }
     },
     "authors": [
@@ -27,7 +27,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Dasundev\\FilamentAdminAccessSecret\\FilamentAdminAccessSecretServiceProvider"
+              "Dasundev\\\\FilamentAccessSecret\\\\FilamentAccessSecretServiceProvider"
             ]
         }
     },

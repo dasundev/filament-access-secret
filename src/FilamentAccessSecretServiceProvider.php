@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Route;
 use Spatie\LaravelPackageTools\Package;
 
-class FilamentAdminAccessSecretServiceProvider extends PluginServiceProvider
+class FilamentAccessSecretServiceProvider extends PluginServiceProvider
 {
     public function configurePackage(Package $package): void
     {
