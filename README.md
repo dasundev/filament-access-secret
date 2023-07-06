@@ -25,13 +25,13 @@ php artisan vendor:publish --tag="filament-access-secret-config"
 After installing the package, open the .env file and add the following key with your secret key:
 
 ```dotenv
-FILAMENT_ACCESS_SECRET_KEY=my_secret_key
+FILAMENT_ACCESS_SECRET_KEY=secret
 ```
 
 To access Filament, append the secret key to the Filament URL like this:
 
 ```
-https://my-domain.com/admin/my_secret_key
+https://my-domain.com/admin/secret
 ```
 
 Now, your Filament access is secured with the provided secret key. 🔒
