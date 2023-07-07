@@ -8,6 +8,13 @@ use Illuminate\Http\Request;
 
 class VerifyAdminAccessSecret
 {
+    /**
+     * Handle the incoming request.
+     *
+     * @param Request $request
+     * @param Closure $next
+     * @return mixed|void
+     */
     public function handle(Request $request, Closure $next)
     {
         $secret = config('filament-access-secret.key');

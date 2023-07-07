@@ -8,6 +8,11 @@ use Illuminate\Http\RedirectResponse;
 
 class StoreSecret extends Controller
 {
+    /**
+     * store a cookie on the web browser.
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function __invoke(): RedirectResponse
     {
         $secret = config('filament-access-secret.key');

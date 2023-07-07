@@ -11,6 +11,12 @@ use Spatie\LaravelPackageTools\Package;
 
 class FilamentAccessSecretServiceProvider extends PluginServiceProvider
 {
+    /**
+     * Configure the package.
+     *
+     * @param Package $package
+     * @return void
+     */
     public function configurePackage(Package $package): void
     {
         $package
@@ -18,17 +24,32 @@ class FilamentAccessSecretServiceProvider extends PluginServiceProvider
             ->hasConfigFile();
     }
 
+    /**
+     * Booting the package.
+     *
+     * @return void
+     */
     public function bootingPackage(): void
     {
         $this->registerMiddleware();
         $this->registerRoute();
     }
 
+    /**
+     * Register the middleware.
+     *
+     * @return void
+     */
     private function registerMiddleware(): void
     {
         Config::prepend('filament.middleware.base', VerifyAdminAccessSecret::class);
     }
 
+    /**
+     * Register the route.
+     *
+     * @return void
+     */
     private function registerRoute(): void
     {
         $path = config('filament.path');
