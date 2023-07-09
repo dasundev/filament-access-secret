@@ -31,7 +31,7 @@ FILAMENT_ACCESS_SECRET_KEY=secret
 To access Filament, append the secret key to the Filament URL like this:
 
 ```
-https://my-domain.com/admin/secret
+https://my-website.com/admin/secret
 ```
 
 Now, your Filament access is secured with the provided secret key. 🔒
