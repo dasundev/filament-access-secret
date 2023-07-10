@@ -40,8 +40,11 @@ Now, your Filament access is secured with the provided secret key. 🔒
 
 ## Changelog
 
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
+Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
 
 ## Contributing
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+
+## Buy Me A Coffee! :coffee:
+If you find my plugin helpful or valuable, please consider supporting its development. Your contribution will enable me to dedicate more time and resources to enhance the plugin. [Buy me a coffee!](https://www.buymeacoffee.com/dasundev) Your support is greatly appreciated!
