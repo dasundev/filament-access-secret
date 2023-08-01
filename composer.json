@@ -10,7 +10,7 @@
     ],
     "require": {
         "php": "^8.0",
-        "filament/filament": "^3.0"
+        "filament/filament": "^2.0|^3.0"
     },
     "license": "MIT",
     "autoload": {
