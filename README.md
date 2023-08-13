@@ -1,5 +1,4 @@
-
-![filament-access-secret](https://github.com/dasundev/filament-access-secret/assets/54996800/7730e1f6-d792-4b3e-ac87-ff5b9c8825f4)
+![dasundev-access-secret](https://github.com/dasundev/filament-access-secret/assets/54996800/af4732b5-f3ef-4f98-8a37-9eafb64d5b6f)
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/dasundev/filament-access-secret.svg?style=flat-square)](https://packagist.org/packages/dasundev/filament-access-secret)
 [![Total Downloads](https://img.shields.io/packagist/dt/dasundev/filament-access-secret.svg?style=flat-square)](https://packagist.org/packages/dasundev/filament-access-secret)
