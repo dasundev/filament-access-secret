@@ -1,4 +1,5 @@
-![dasundev-access-secret](https://github.com/dasundev/filament-access-secret/assets/54996800/af4732b5-f3ef-4f98-8a37-9eafb64d5b6f)
+![filament-access-secret](https://github.com/dasundev/filament-access-secret/assets/54996800/ab63eaa0-9df0-47a7-bddf-7dec12e05f49)
+
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/dasundev/filament-access-secret.svg?style=flat-square)](https://packagist.org/packages/dasundev/filament-access-secret)
 [![Total Downloads](https://img.shields.io/packagist/dt/dasundev/filament-access-secret.svg?style=flat-square)](https://packagist.org/packages/dasundev/filament-access-secret)
@@ -9,7 +10,7 @@ This package provides a middleware for securing access to Filament by requiring 
 
 ## Installation
 
-You can install the package via composer:
+You can install the package via Composer:
 
  ```bash
  composer require dasundev/filament-access-secret
