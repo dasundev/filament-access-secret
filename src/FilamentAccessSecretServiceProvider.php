@@ -4,12 +4,13 @@ namespace Dasundev\FilamentAccessSecret;
 
 use Dasundev\FilamentAccessSecret\Controllers\StoreSecret;
 use Dasundev\FilamentAccessSecret\Middleware\VerifyAdminAccessSecret;
-use Filament\PluginServiceProvider;
+use Filament\Facades\Filament;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Route;
 use Spatie\LaravelPackageTools\Package;
+use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class FilamentAccessSecretServiceProvider extends PluginServiceProvider
+class FilamentAccessSecretServiceProvider extends PackageServiceProvider
 {
     /**
      * Configure the package.
@@ -52,9 +53,11 @@ class FilamentAccessSecretServiceProvider extends PluginServiceProvider
      */
     private function registerRoute(): void
     {
-        $path = config('filament.path');
+        $panel = Filament::getCurrentPanel();
+        $panelPath = $panel->getPath();
+
         $secret = config('filament-access-secret.key');
 
-        Route::get("$path/$secret", StoreSecret::class);
+        Route::get("$panelPath/$secret", StoreSecret::class);
     }
 }
