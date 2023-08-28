@@ -14,6 +14,14 @@ You can install the package via Composer:
  ```bash
  composer require dasundev/filament-access-secret
  ```
+
+
+If you're using Filament 2, please use this version:
+
+ ```bash
+ composer require dasundev/filament-access-secret:v1.*
+ ```
+
 Optionally, you can publish the config file using:
 
 ```bash
@@ -31,6 +39,28 @@ To access Filament, append the secret key to the Filament URL like this:
 
 ```
 https://my-website.com/admin/secret
+```
+
+#### For Filament 3: Updating Middleware Order
+
+Open the `app/Providers/Filament/AdminPanelProvider.php` and right at the start of the list of middleware, add `VerifyAdminAccessSecret` middleware:
+
+```php
+use Dasundev\FilamentAccessSecret\Middleware\VerifyAdminAccessSecret;
+
+class AdminPanelProvider extends PanelProvider
+{
+    public function panel(Panel $panel): Panel
+    {
+        return $panel
+            ...
+            ->middleware([
+                VerifyAdminAccessSecret::class,
+                // Other middlewares...
+            ])
+            ...;
+    }
+}
 ```
 
 Now, your Filament access is secured with the provided secret key. 🔒
