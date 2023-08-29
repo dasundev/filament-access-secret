@@ -31,6 +31,7 @@ class FilamentAccessSecretServiceProvider extends PackageServiceProvider
     public function bootingPackage(): void
     {
         $this->registerRoute();
+        $this->registerSingleton();
     }
 
     /**
@@ -40,11 +41,18 @@ class FilamentAccessSecretServiceProvider extends PackageServiceProvider
      */
     private function registerRoute(): void
     {
-        $panel = Filament::getCurrentPanel();
-        $panelPath = $panel->getPath();
+        $panelPath = Filament::getCurrentPanel()->getPath();
 
         $secret = config('filament-access-secret.key');
 
         Route::get("$panelPath/$secret", StoreSecret::class);
+    }
+
+    public function registerSingleton(): void
+    {
+        $this->app->singleton('filament-access-secret', function () {
+            $cookie = config('filament-access-secret.cookie');
+            return new $cookie;
+        });
     }
 }

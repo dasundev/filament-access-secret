@@ -2,10 +2,11 @@
 
 namespace Dasundev\FilamentAccessSecret;
 
+use Dasundev\FilamentAccessSecret\Contracts\AccessSecretCookie;
 use Illuminate\Support\Carbon;
 use Symfony\Component\HttpFoundation\Cookie;
 
-class FilamentAccessSecretCookie
+class DefaultAccessSecretCookie implements AccessSecretCookie
 {
     /**
      * Create a new admin access secret cookie.

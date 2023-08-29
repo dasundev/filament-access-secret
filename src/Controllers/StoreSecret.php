@@ -3,7 +3,7 @@
 namespace Dasundev\FilamentAccessSecret\Controllers;
 
 use App\Http\Controllers\Controller;
-use Dasundev\FilamentAccessSecret\FilamentAccessSecretCookie;
+use Dasundev\FilamentAccessSecret\AccessSecretCookie;
 use Filament\Facades\Filament;
 use Illuminate\Http\RedirectResponse;
 
@@ -12,15 +12,14 @@ class StoreSecret extends Controller
     /**
      * Store a cookie on the web browser.
      *
-     * @return \Illuminate\Http\RedirectResponse
+     * @return RedirectResponse
      */
     public function __invoke(): RedirectResponse
     {
         $secret = config('filament-access-secret.key');
 
-        $panel = Filament::getCurrentPanel();
-        $panelId = $panel->getId();
+        $panelId = Filament::getCurrentPanel()->getId();
 
-        return to_route("filament.{$panelId}.auth.login")->withCookie(FilamentAccessSecretCookie::create($secret));
+        return to_route("filament.{$panelId}.auth.login")->withCookie(AccessSecretCookie::create($secret));
     }
 }

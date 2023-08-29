@@ -3,7 +3,7 @@
 namespace Dasundev\FilamentAccessSecret\Middleware;
 
 use Closure;
-use Dasundev\FilamentAccessSecret\FilamentAccessSecretCookie;
+use Dasundev\FilamentAccessSecret\DefaultAccessSecretCookie;
 use Illuminate\Http\Request;
 
 class VerifyAdminAccessSecret
@@ -21,7 +21,7 @@ class VerifyAdminAccessSecret
 
         $cookie = $request->cookie('filament_access_secret');
 
-        if ($cookie && FilamentAccessSecretCookie::isValid($cookie, $secret) || blank($secret)) {
+        if ($cookie && DefaultAccessSecretCookie::isValid($cookie, $secret) || blank($secret)) {
             return $next($request);
         }
 
