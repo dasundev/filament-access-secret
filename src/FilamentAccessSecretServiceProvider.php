@@ -50,6 +50,11 @@ class FilamentAccessSecretServiceProvider extends PackageServiceProvider
         Route::get("$panelPath/$secret", StoreSecret::class);
     }
 
+    /**
+     * Register the singleton.
+     *
+     * @return void
+     */
     public function registerSingleton(): void
     {
         $this->app->singleton('filament-access-secret', function () {
