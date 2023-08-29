@@ -55,7 +55,7 @@ class FilamentAccessSecretServiceProvider extends PackageServiceProvider
         $this->app->singleton('filament-access-secret', function () {
             $cookie = config('filament-access-secret.cookie');
 
-            if (!class_exists($cookie) || ! class_implements($cookie, AccessSecretCookie::class)) {
+            if (! class_exists($cookie) || ! class_implements($cookie, AccessSecretCookie::class)) {
                 throw new InvalidAccessSecretCookieException;
             }
 
