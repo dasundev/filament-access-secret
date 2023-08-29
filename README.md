@@ -102,5 +102,8 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
-## Buy Me A Coffee! :coffee:
-If you find my plugin helpful or valuable, please consider supporting its development. Your contribution will enable me to dedicate more time and resources to enhance the plugin. [Buy me a coffee!](https://www.buymeacoffee.com/dasundev) Your support is greatly appreciated!
+## Support Me
+
+Is this plugin helpful to you? Your support will be helpful to maintain this plugin. Considering buying me a coffee.
+
+<a href='https://ko-fi.com/M4M41O7P3' target='_blank'><img height='40' style='border:0px;height:40px;' src='https://storage.ko-fi.com/cdn/kofi3.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
