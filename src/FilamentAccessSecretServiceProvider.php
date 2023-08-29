@@ -3,12 +3,12 @@
 namespace Dasundev\FilamentAccessSecret;
 
 use Dasundev\FilamentAccessSecret\Controllers\StoreSecret;
-use Dasundev\FilamentAccessSecret\Middleware\VerifyAdminAccessSecret;
+use Dasundev\FilamentAccessSecret\Exceptions\InvalidAccessSecretCookieException;
 use Filament\Facades\Filament;
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Route;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Dasundev\FilamentAccessSecret\Contracts\AccessSecretCookie;
 
 class FilamentAccessSecretServiceProvider extends PackageServiceProvider
 {
@@ -32,18 +32,8 @@ class FilamentAccessSecretServiceProvider extends PackageServiceProvider
      */
     public function bootingPackage(): void
     {
-        $this->registerMiddleware();
         $this->registerRoute();
-    }
-
-    /**
-     * Register the middleware.
-     *
-     * @return void
-     */
-    private function registerMiddleware(): void
-    {
-        Config::prepend('filament.middleware.base', VerifyAdminAccessSecret::class);
+        $this->registerSingleton();
     }
 
     /**
@@ -53,11 +43,23 @@ class FilamentAccessSecretServiceProvider extends PackageServiceProvider
      */
     private function registerRoute(): void
     {
-        $panel = Filament::getCurrentPanel();
-        $panelPath = $panel->getPath();
+        $panelPath = Filament::getCurrentPanel()->getPath();
 
         $secret = config('filament-access-secret.key');
 
         Route::get("$panelPath/$secret", StoreSecret::class);
+    }
+
+    public function registerSingleton(): void
+    {
+        $this->app->singleton('filament-access-secret', function () {
+            $cookie = config('filament-access-secret.cookie');
+
+            if (! class_exists($cookie) || ! class_implements($cookie, AccessSecretCookie::class)) {
+                throw new InvalidAccessSecretCookieException;
+            }
+
+            return new $cookie;
+        });
     }
 }

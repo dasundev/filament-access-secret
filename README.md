@@ -7,6 +7,11 @@
 
 This package provides a middleware for securing access to Filament by requiring a secret key to be provided in the URL.
 
+## How it Works
+Once you've set up and configured this package, it works by preventing access to `http://my-website.com/admin`. If you try to visit that link, you'll see a **"404"** message. But if you add the secret key at the end of the URL like this: `http://my-website.com/admin/secret`, you'll be able to access the admin panel.
+
+This functionality is facilitated through a specific type of cookie working behind the scenes. This cookie validates whether you possess the authorization to access the Filament panel.
+
 ## Installation
 
 You can install the package via Composer:
@@ -66,6 +71,28 @@ class AdminPanelProvider extends PanelProvider
 Now, your Filament access is secured with the provided secret key. 🔒
 
 > If you want to disable the secret access, simply keep the FILAMENT_ACCESS_SECRET_KEY value empty or delete the key from the .env file.
+
+## Enhance Security
+To enhance security, you have the option to include your own cookie class through the configuration file.
+
+```php
+<?php
+
+return [
+ 
+    /*
+    |--------------------------------------------------------------------------
+    | Access Secret Cookie
+    |--------------------------------------------------------------------------
+    |
+    | To use your own access secret cookie, set it here.
+    |
+    */
+
+    'cookie' => MyAccessSecretCookie::class
+];
+
+```
 
 ## Changelog
 

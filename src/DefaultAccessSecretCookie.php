@@ -2,13 +2,14 @@
 
 namespace Dasundev\FilamentAccessSecret;
 
+use Dasundev\FilamentAccessSecret\Contracts\AccessSecretCookie;
 use Illuminate\Support\Carbon;
 use Symfony\Component\HttpFoundation\Cookie;
 
-class FilamentAccessSecretCookie
+class DefaultAccessSecretCookie implements AccessSecretCookie
 {
     /**
-     * Create a new admin access secret cookie.
+     * Create a new access secret cookie.
      */
     public static function create(string $key): Cookie
     {
@@ -21,7 +22,7 @@ class FilamentAccessSecretCookie
     }
 
     /**
-     * Determine if the given admin access secret is valid.
+     * Determine if the given access secret is valid.
      */
     public static function isValid(string $cookie, string $key): bool
     {
