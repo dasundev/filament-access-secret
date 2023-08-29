@@ -3,9 +3,7 @@
 namespace Dasundev\FilamentAccessSecret;
 
 use Dasundev\FilamentAccessSecret\Controllers\StoreSecret;
-use Dasundev\FilamentAccessSecret\Middleware\VerifyAdminAccessSecret;
 use Filament\Facades\Filament;
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Route;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
@@ -32,18 +30,7 @@ class FilamentAccessSecretServiceProvider extends PackageServiceProvider
      */
     public function bootingPackage(): void
     {
-        $this->registerMiddleware();
         $this->registerRoute();
-    }
-
-    /**
-     * Register the middleware.
-     *
-     * @return void
-     */
-    private function registerMiddleware(): void
-    {
-        Config::prepend('filament.middleware.base', VerifyAdminAccessSecret::class);
     }
 
     /**
