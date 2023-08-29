@@ -74,9 +74,7 @@ To enhance security, you have the option to include your own cookie class throug
 <?php
 
 return [
-
-    ...
-    
+ 
     /*
     |--------------------------------------------------------------------------
     | Access Secret Cookie
