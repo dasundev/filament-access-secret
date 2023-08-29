@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Cookie;
 class DefaultAccessSecretCookie implements AccessSecretCookie
 {
     /**
-     * Create a new admin access secret cookie.
+     * Create a new access secret cookie.
      */
     public static function create(string $key): Cookie
     {
@@ -22,7 +22,7 @@ class DefaultAccessSecretCookie implements AccessSecretCookie
     }
 
     /**
-     * Determine if the given admin access secret is valid.
+     * Determine if the given access secret is valid.
      */
     public static function isValid(string $cookie, string $key): bool
     {
