@@ -67,6 +67,30 @@ Now, your Filament access is secured with the provided secret key. 🔒
 
 > If you want to disable the secret access, simply keep the FILAMENT_ACCESS_SECRET_KEY value empty or delete the key from the .env file.
 
+## Enhance Security
+To enhance security, you have the option to include your own cookie class through the configuration file.
+
+```php
+<?php
+
+return [
+
+    ...
+    
+    /*
+    |--------------------------------------------------------------------------
+    | Access Secret Cookie
+    |--------------------------------------------------------------------------
+    |
+    | To use your own access secret cookie, set it here.
+    |
+    */
+
+    'cookie' => MyAccessSecretCookie::class
+];
+
+```
+
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
