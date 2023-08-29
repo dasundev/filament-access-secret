@@ -7,6 +7,11 @@
 
 This package provides a middleware for securing access to Filament by requiring a secret key to be provided in the URL.
 
+## How it Works
+Once you've set up and configured this package, it works by preventing access to `http://my-website.com/admin`. If you try to visit that link, you'll see a **"404"** message. But if you add the secret key at the end of the URL like this: `http://my-website.com/admin/secret`, you'll be able to access the admin panel.
+
+Behind the scenes, this is achieved using a special type of cookie that checks if you have the right to access the secret area.
+
 ## Installation
 
 You can install the package via Composer:
