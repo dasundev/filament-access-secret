@@ -2,21 +2,18 @@
 
 namespace Dasundev\FilamentAccessSecret;
 
+use Dasundev\FilamentAccessSecret\Contracts\AccessSecretCookie;
 use Dasundev\FilamentAccessSecret\Controllers\StoreSecret;
 use Dasundev\FilamentAccessSecret\Exceptions\InvalidAccessSecretCookieException;
 use Filament\Facades\Filament;
 use Illuminate\Support\Facades\Route;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Dasundev\FilamentAccessSecret\Contracts\AccessSecretCookie;
 
 class FilamentAccessSecretServiceProvider extends PackageServiceProvider
 {
     /**
      * Configure the package.
-     *
-     * @param Package $package
-     * @return void
      */
     public function configurePackage(Package $package): void
     {
@@ -27,8 +24,6 @@ class FilamentAccessSecretServiceProvider extends PackageServiceProvider
 
     /**
      * Booting the package.
-     *
-     * @return void
      */
     public function bootingPackage(): void
     {
@@ -41,8 +36,6 @@ class FilamentAccessSecretServiceProvider extends PackageServiceProvider
 
     /**
      * Register the route.
-     *
-     * @return void
      */
     private function registerRoute(): void
     {
@@ -55,8 +48,6 @@ class FilamentAccessSecretServiceProvider extends PackageServiceProvider
 
     /**
      * Register the singleton.
-     *
-     * @return void
      */
     public function registerSingleton(): void
     {

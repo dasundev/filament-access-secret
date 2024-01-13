@@ -11,8 +11,6 @@ class StoreSecret extends Controller
 {
     /**
      * Store a cookie on the web browser.
-     *
-     * @return RedirectResponse
      */
     public function __invoke(): RedirectResponse
     {

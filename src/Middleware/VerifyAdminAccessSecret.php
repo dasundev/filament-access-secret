@@ -11,8 +11,6 @@ class VerifyAdminAccessSecret
     /**
      * Handle the incoming request.
      *
-     * @param Request $request
-     * @param Closure $next
      * @return mixed|void
      */
     public function handle(Request $request, Closure $next)

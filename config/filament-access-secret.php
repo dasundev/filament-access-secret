@@ -22,5 +22,5 @@ return [
     |
     */
 
-    'cookie' => \Dasundev\FilamentAccessSecret\DefaultAccessSecretCookie::class
+    'cookie' => \Dasundev\FilamentAccessSecret\DefaultAccessSecretCookie::class,
 ];
