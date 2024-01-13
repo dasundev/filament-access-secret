@@ -5,12 +5,27 @@
         "dasundev",
         "laravel",
         "filament",
+        "access",
         "secret",
         "login"
     ],
+    "authors": [
+        {
+            "name": "Dasun Tharanga",
+            "email": "hello@dasun.dev"
+        }
+    ],
     "require": {
         "php": "^8.0",
+        "laravel/laravel": "^10.0",
         "filament/filament": "^2.0|^3.0"
+    },
+    "require-dev": {
+        "larastan/larastan": "^2.0",
+        "laravel/pint": "^1.13",
+        "orchestra/testbench": "^8.0",
+        "pestphp/pest": "^2.30.0",
+        "orchestra/testbench-dusk": "^8.12"
     },
     "license": "MIT",
     "autoload": {
@@ -18,18 +33,45 @@
             "Dasundev\\FilamentAccessSecret\\": "src/"
         }
     },
-    "authors": [
-        {
-            "name": "Dasun Tharanga",
-            "email": "hello@dasun.dev"
+    "autoload-dev": {
+        "psr-4": {
+            "Dasundev\\FilamentAccessSecret\\Tests\\": "tests",
+            "Workbench\\App\\": "workbench/app/",
+            "Workbench\\Database\\Factories\\": "workbench/database/factories/",
+            "Workbench\\Database\\Seeders\\": "workbench/database/seeders/"
         }
-    ],
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "pint": "vendor/bin/pint --dirty",
+        "analyse": "vendor/bin/phpstan analyse",
+        "post-autoload-dump": [
+            "@clear",
+            "@prepare"
+        ],
+        "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
+        "prepare": "@php vendor/bin/testbench package:discover --ansi",
+        "build": "@php vendor/bin/testbench workbench:build --ansi",
+        "serve": [
+            "@build",
+            "@php vendor/bin/testbench serve"
+        ],
+        "lint": [
+            "@php vendor/bin/pint",
+            "@php vendor/bin/phpstan analyse"
+        ]
+    },
+    "minimum-stability": "dev",
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
     "extra": {
         "laravel": {
             "providers": [
-              "Dasundev\\FilamentAccessSecret\\FilamentAccessSecretServiceProvider"
+                "Dasundev\\FilamentAccessSecret\\FilamentAccessSecretServiceProvider"
             ]
         }
-    },
-    "minimum-stability": "dev"
+    }
 }

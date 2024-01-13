@@ -32,8 +32,11 @@ class FilamentAccessSecretServiceProvider extends PackageServiceProvider
      */
     public function bootingPackage(): void
     {
-        $this->registerRoute();
         $this->registerSingleton();
+
+        if (! $this->app->runningInConsole()) {
+            $this->registerRoute();
+        }
     }
 
     /**

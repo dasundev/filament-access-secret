@@ -1,0 +1,14 @@
+providers:
+  - Workbench\App\Providers\WorkbenchServiceProvider
+  - Livewire\LivewireServiceProvider
+  - Filament\Forms\FormsServiceProvider
+  - Filament\Support\SupportServiceProvider
+  - Filament\Actions\ActionsServiceProvider
+  - Filament\Notifications\NotificationsServiceProvider
+  - Filament\FilamentServiceProvider
+  - Workbench\App\Providers\Filament\AdminPanelProvider
+  - Dasundev\FilamentAccessSecret\FilamentAccessSecretServiceProvider
+
+workbench:
+  build:
+    - filament:install --panels -n
