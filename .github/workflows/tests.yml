@@ -35,5 +35,8 @@ jobs:
         run: |
           composer update --prefer-dist --no-interaction --no-progress --${{ matrix.stability }}
 
+      - name: Install Chromedriver
+        run: php artisan dusk:chrome-driver
+
       - name: Run Tests
         run: composer run test
