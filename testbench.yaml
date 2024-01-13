@@ -12,3 +12,4 @@ providers:
 workbench:
   build:
     - filament:install --panels -n
+    - dusk:chrome-driver
