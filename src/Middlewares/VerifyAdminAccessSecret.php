@@ -1,6 +1,6 @@
 <?php
 
-namespace Dasundev\FilamentAccessSecret\Middleware;
+namespace Dasundev\FilamentAccessSecret\Middlewares;
 
 use Closure;
 use Dasundev\FilamentAccessSecret\AccessSecretCookie;

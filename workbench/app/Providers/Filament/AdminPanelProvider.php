@@ -2,7 +2,7 @@
 
 namespace Workbench\App\Providers\Filament;
 
-use Dasundev\FilamentAccessSecret\Middleware\VerifyAdminAccessSecret;
+use Dasundev\FilamentAccessSecret\Middlewares\VerifyAdminAccessSecret;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
