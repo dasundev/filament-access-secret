@@ -80,7 +80,7 @@ Now, your Filament access is secured with the provided secret key.
 
 The filament access secret is supports for multiple panels with different secret keys.
 
-In order to enable it, you must publish the configuration file by executing the following command.
+To enable it, you must publish the configuration file by running the following command.
 
 ```bash
 php artisan vendor:publish --tag="filament-access-secret-config"
@@ -93,6 +93,12 @@ Then open the config file at `config/filament-access-secret.php` and add your ne
     ...
     'app' => env('APP_FILAMENT_ACCESS_SECRET_KEY', ''), // "app" is the id of the panel
 ],
+```
+
+Now you can set a secret key for the new panel (in this case for the "app" panel).
+
+```dotenv
+APP_FILAMENT_ACCESS_SECRET_KEY=app123
 ```
 
 ## 🚫 Disable Secret Access
