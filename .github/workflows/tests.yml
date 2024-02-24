@@ -34,7 +34,7 @@ jobs:
           composer update --prefer-dist --no-interaction --no-progress --${{ matrix.stability }}
 
       - name: Install Chromedriver
-        run: ./vendor/bin/testbench dusk:chrome-driver 121
+        run: ./vendor/bin/testbench dusk:chrome-driver --detect
 
       - name: Run Tests
         run: composer run test
