@@ -6,6 +6,7 @@ use Dasundev\FilamentAccessSecret\Contracts\AccessSecretCookie;
 use Dasundev\FilamentAccessSecret\Controllers\StoreSecret;
 use Dasundev\FilamentAccessSecret\Exceptions\InvalidAccessSecretCookieException;
 use Filament\Facades\Filament;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Route;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
@@ -39,11 +40,17 @@ class FilamentAccessSecretServiceProvider extends PackageServiceProvider
      */
     private function registerRoute(): void
     {
-        $panelPath = Filament::getCurrentPanel()->getPath();
+        $panels = Filament::getPanels();
 
-        $secret = config('filament-access-secret.key');
+        foreach ($panels as $panel) {
+            $panelId = $panel->getId();
 
-        Route::get("$panelPath/$secret", StoreSecret::class);
+            $key = $panel->isDefault() ? 'default' : $panelId;
+
+            $secret = Config::get("filament-access-secret.keys.$key");
+
+            Route::get('{'.$panelId.'}'."/$secret", StoreSecret::class);
+        }
     }
 
     /**

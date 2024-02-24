@@ -2,8 +2,6 @@ name: Run Tests
 
 on:
   push:
-    branches:
-      - main
   pull_request:
   schedule:
     - cron: '0 0 * * *'
@@ -36,7 +34,7 @@ jobs:
           composer update --prefer-dist --no-interaction --no-progress --${{ matrix.stability }}
 
       - name: Install Chromedriver
-        run: ./vendor/bin/testbench dusk:chrome-driver
+        run: ./vendor/bin/testbench dusk:chrome-driver --detect
 
       - name: Run Tests
         run: composer run test
