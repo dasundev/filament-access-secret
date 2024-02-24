@@ -56,7 +56,7 @@ https://my-website.com/admin/secret
 Open the `app/Providers/Filament/AdminPanelProvider.php` and right at the start of the list of middleware, add `VerifyAdminAccessSecret` middleware:
 
 ```php
-use Dasundev\FilamentAccessSecret\Middleware\VerifyAdminAccessSecret;
+use Dasundev\FilamentAccessSecret\Middlewares\VerifyAdminAccessSecret;
 
 class AdminPanelProvider extends PanelProvider
 {
