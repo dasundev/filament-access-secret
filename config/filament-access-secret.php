@@ -11,7 +11,9 @@ return [
     |
     */
 
-    'key' => env('FILAMENT_ACCESS_SECRET_KEY', ''),
+    'keys' => [
+        'default' => env('DEFAULT_FILAMENT_ACCESS_SECRET_KEY', ''),
+    ],
 
     /*
     |--------------------------------------------------------------------------

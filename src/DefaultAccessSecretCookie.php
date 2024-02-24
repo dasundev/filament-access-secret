@@ -10,12 +10,15 @@ class DefaultAccessSecretCookie implements AccessSecretCookie
 {
     /**
      * Create a new access secret cookie.
+     * @param string $keyName
+     * @param string $key
+     * @return Cookie
      */
-    public static function create(string $key): Cookie
+    public static function create(string $keyName, string $key): Cookie
     {
         $expiresAt = Carbon::now()->addHours(12);
 
-        return new Cookie('filament_access_secret', base64_encode(json_encode([
+        return new Cookie("filament_access_secret_$keyName", base64_encode(json_encode([
             'expires_at' => $expiresAt->getTimestamp(),
             'mac' => hash_hmac('sha256', $expiresAt->getTimestamp(), $key),
         ])), $expiresAt, config('session.path'), config('session.domain'));
@@ -23,6 +26,9 @@ class DefaultAccessSecretCookie implements AccessSecretCookie
 
     /**
      * Determine if the given access secret is valid.
+     * @param string $cookie
+     * @param string $key
+     * @return bool
      */
     public static function isValid(string $cookie, string $key): bool
     {
