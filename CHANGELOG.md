@@ -2,6 +2,14 @@
 
 All notable changes to `filament-access-secret` will be documented in this file.
 
+## v3.0.1 - 2024-02-25
+
+### What's Changed
+
+* refactor: The name of the middleware folder by @dasundev in https://github.com/dasundev/filament-access-secret/pull/15
+
+**Full Changelog**: https://github.com/dasundev/filament-access-secret/compare/v3.0.0...v3.0.1
+
 ## v3.0.0 - 2024-02-24
 
 ### What's Changed
