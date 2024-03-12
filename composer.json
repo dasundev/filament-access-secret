@@ -1,6 +1,6 @@
 {
     "name": "dasundev/filament-access-secret",
-    "description": "This package provides a middleware for securing access to Filament by requiring a secret key to be provided in the URL.",
+    "description": "Secures access to Filament by requiring a secret key in the URL.",
     "keywords": [
         "dasundev",
         "laravel",
