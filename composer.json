@@ -72,5 +72,7 @@
                 "Dasundev\\FilamentAccessSecret\\FilamentAccessSecretServiceProvider"
             ]
         }
-    }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
 }
