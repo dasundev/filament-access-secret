@@ -9,6 +9,11 @@
             <directory suffix="Test.php">./tests</directory>
         </testsuite>
     </testsuites>
+    <php>
+        <env name="APP_KEY" value="AckfSECXIvnK5r28GVIWUAxmbBSjTsmF"/>
+        <env name="DB_CONNECTION" value="testing"/>
+        <env name="DEFAULT_FILAMENT_ACCESS_SECRET_KEY" value="default-secret"/>
+    </php>
     <source>
         <include>
             <directory suffix=".php">./app</directory>
