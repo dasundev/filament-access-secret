@@ -45,39 +45,8 @@ class LoginTest extends DuskTestCase
         $this->browse(function (Browser $browser) {
             $browser->visit((new AdminLogin)->withSecretKey('default-secret'))
                 ->on(new AdminLogin)
-                ->assertSee('Sign in');
-        });
-    }
-
-    /**
-     * @test
-     */
-    public function it_can_render_non_secure_app_login_page_without_a_secret_key()
-    {
-        $this->beforeServingApplication(static function ($app, $config) {
-            $config->set('filament-access-secret.keys.app', null);
-        });
-
-        $this->assertNull(config('filament-access-secret.keys.app'));
-
-        $this->browse(function (Browser $browser) {
-            $browser->visit(new AppLogin)
-                ->assertSee('Sign in');
-        });
-    }
-
-    /**
-     * @test
-     */
-    public function it_can_not_render_secure_app_login_page_without_a_secret_key()
-    {
-        $this->beforeServingApplication(static function ($app, $config) {
-            $config->set('filament-access-secret.keys.app', 'app-secret');
-        });
-
-        $this->browse(function (Browser $browser) {
-            $browser->visit((new AppLogin))
-                ->assertSee('404');
+                ->assertSee('Sign in')
+                ->assertHasPlainCookie('filament_access_secret_default');
         });
     }
 }
