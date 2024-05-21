@@ -2,18 +2,21 @@
 
 namespace Dasundev\FilamentAccessSecret\Tests\Browser\Pages;
 
+use Dasundev\FilamentAccessSecret\Tests\WithSecretKey;
 use Laravel\Dusk\Browser;
 use Laravel\Dusk\Page;
 
-class Login extends Page
+class AdminLogin extends Page
 {
+    use WithSecretKey;
+
     public function url(): string
     {
-        return '/admin/login';
+        return $this->url;
     }
 
     public function assert(Browser $browser): void
     {
-        $browser->assertPathIs($this->url());
+        $browser->assertPathIs('/admin/login');
     }
 }
