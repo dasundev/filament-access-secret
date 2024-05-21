@@ -2,18 +2,34 @@
 
 namespace Dasundev\FilamentAccessSecret\Tests;
 
+use Laravel\Dusk\Browser;
+
 trait WithSecretKey
 {
-    private bool $withSecretKey = false;
+    protected bool $withSecretKey = false;
 
-    private string $url = '/admin/login';
+    protected string $url;
 
     public function withSecretKey(string $key): static
     {
         $this->withSecretKey = true;
 
-        $this->url = "/admin/$key";
+        $this->url = "/$this->panel/$key";
 
         return $this;
+    }
+
+    public function url(): string
+    {
+        if ($this->withSecretKey) {
+            return $this->url;
+        }
+
+        return "/$this->panel/login";
+    }
+
+    public function assert(Browser $browser): void
+    {
+        $browser->assertPathIs("/$this->panel/login");
     }
 }
