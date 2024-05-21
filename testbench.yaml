@@ -7,8 +7,17 @@ providers:
   - Filament\Notifications\NotificationsServiceProvider
   - Filament\FilamentServiceProvider
   - Workbench\App\Providers\Filament\AdminPanelProvider
+  - Workbench\App\Providers\Filament\AppPanelProvider
   - Dasundev\FilamentAccessSecret\FilamentAccessSecretServiceProvider
 
 workbench:
+  welcome: true
+  install: true
+  guard: web
   build:
-    - filament:install --panels -n
+    - create-sqlite-db
+    - migrate:refresh
+    - filament:assets
+  discovers:
+    web: true
+    config: true

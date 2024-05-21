@@ -17,7 +17,8 @@
     ],
     "require": {
         "php": "^8.0",
-        "filament/filament": "^3.0"
+        "filament/filament": "^3.0",
+        "laravel/framework": "^10.0"
     },
     "require-dev": {
         "larastan/larastan": "^2.0",
@@ -35,9 +36,7 @@
     "autoload-dev": {
         "psr-4": {
             "Dasundev\\FilamentAccessSecret\\Tests\\": "tests",
-            "Workbench\\App\\": "workbench/app/",
-            "Workbench\\Database\\Factories\\": "workbench/database/factories/",
-            "Workbench\\Database\\Seeders\\": "workbench/database/seeders/"
+            "Workbench\\App\\": "workbench/app/"
         }
     },
     "scripts": {
@@ -46,11 +45,13 @@
         "analyse": "vendor/bin/phpstan analyse",
         "post-autoload-dump": [
             "@clear",
-            "@prepare"
+            "@prepare",
+            "@dusk:install-chromedriver"
         ],
         "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
         "prepare": "@php vendor/bin/testbench package:discover --ansi",
         "build": "@php vendor/bin/testbench workbench:build --ansi",
+        "dusk:install-chromedriver": "@php vendor/bin/dusk-updater detect --auto-update --ansi",
         "serve": [
             "@build",
             "@php vendor/bin/testbench serve"
@@ -60,7 +61,6 @@
             "@php vendor/bin/phpstan analyse"
         ]
     },
-    "minimum-stability": "dev",
     "config": {
         "allow-plugins": {
             "pestphp/pest-plugin": true

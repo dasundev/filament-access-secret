@@ -2,19 +2,18 @@
 
 namespace Dasundev\FilamentAccessSecret\Controllers;
 
-use App\Http\Controllers\Controller;
 use Dasundev\FilamentAccessSecret\AccessSecretCookie;
 use Exception;
 use Filament\Facades\Filament;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Config;
 
 class StoreSecret extends Controller
 {
     /**
      * Store a cookie on the web browser.
-     * @param $panelId
-     * @return RedirectResponse
+     *
      * @throws Exception
      */
     public function __invoke($panelId): RedirectResponse
