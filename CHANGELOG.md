@@ -2,6 +2,15 @@
 
 All notable changes to `filament-access-secret` will be documented in this file.
 
+## v3.0.2 - 2026-02-03
+
+### What's Changed
+
+* docs: Update banner by @dasundev in https://github.com/dasundev/filament-access-secret/pull/16
+* test: Add test cases by @dasundev in https://github.com/dasundev/filament-access-secret/pull/17
+
+**Full Changelog**: https://github.com/dasundev/filament-access-secret/compare/v3.0.1...v3.0.2
+
 ## v3.0.1 - 2024-02-25
 
 ### What's Changed
